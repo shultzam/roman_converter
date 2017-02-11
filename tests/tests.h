@@ -4,55 +4,79 @@
 #include "converter.h"
 
 // R to A TEST CASES
-START_TEST(test_convert_roman_one_to_arrabic)
+START_TEST(test_convert_roman_one_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("I"), 1);
 }
 END_TEST
 
-START_TEST(test_convert_roman_two_to_arrabic)
+START_TEST(test_convert_roman_two_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("II"), 2);
 }
 END_TEST
 
-START_TEST(test_convert_roman_five_to_arrabic)
+START_TEST(test_convert_roman_five_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("V"), 5);
 }
 END_TEST
 
-START_TEST(test_convert_roman_ten_to_arrabic)
+START_TEST(test_convert_roman_ten_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("X"), 10);
 }
 END_TEST
 
-START_TEST(test_convert_roman_fifty_to_arrabic)
+START_TEST(test_convert_roman_twelve_to_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("XII"), 12);
+}
+END_TEST
+
+START_TEST(test_convert_roman_fifteen_to_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("XV"), 15);
+}
+END_TEST
+
+START_TEST(test_convert_roman_twentyoneto_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("XXI"), 21);
+}
+END_TEST
+
+START_TEST(test_convert_roman_forty_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("XL"), 40);
+}
+END_TEST
+
+START_TEST(test_convert_roman_fifty_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("L"), 50);
 }
 END_TEST
 
-START_TEST(test_convert_roman_hundred_to_arrabic)
+START_TEST(test_convert_roman_hundred_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("C"), 100);
 }
 END_TEST
 
-START_TEST(test_convert_roman_fivehundred_to_arrabic)
+START_TEST(test_convert_roman_fivehundred_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("D"), 500);
 }
 END_TEST
 
-START_TEST(test_convert_roman_thousand_to_arrabic)
+START_TEST(test_convert_roman_thousand_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("M"), 1000);
 }
 END_TEST
 
-START_TEST(test_convert_roman_three_to_arrabic)
+START_TEST(test_convert_roman_three_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("III"), 3);
 }
