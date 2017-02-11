@@ -28,6 +28,14 @@ char* subtract_two_roman_values(char* roman_minuend, char* roman_subtrahend)
 	int32_t subtrahend = convert_roman_to_arabic(roman_subtrahend);
 	int32_t difference = minuend - subtrahend;
 	
+	// check for an illegal difference
+	if( difference < 0 )
+	{
+		printf("*** WARNING: Negative Arabic difference received in %s\n", __func__ );
+		printf("             returning 0\n");
+		return "0";
+	}
+	
 	// convert back to Roman
 	char* result = convert_arabic_to_roman(difference);
 	return result;
@@ -36,7 +44,6 @@ char* subtract_two_roman_values(char* roman_minuend, char* roman_subtrahend)
 /*
  * Utiltiy Functions
  */
-
 // validates the Roman numeral input string against the Roman numeral rules
 int8_t valid_roman_numeral( char* roman_input )
 {
