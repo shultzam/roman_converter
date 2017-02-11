@@ -84,6 +84,13 @@ int8_t valid_roman_numeral( char* roman_input )
 // converts a given string of roman numerals into an integer
 int32_t convert_roman_to_arabic( char* roman_input )
 {
+	// validate the input string
+	if( !valid_roman_numeral(roman_input) )
+	{
+		printf("*** WARNING: Invalid input in %s: %s\n", __func__, roman_input);
+		return 0;
+	}
+	
 	int32_t value = 0;		// value to return
 	
 	uint16_t char_index;

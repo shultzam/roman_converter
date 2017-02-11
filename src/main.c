@@ -13,8 +13,10 @@
 
 int main( int argc, char* argv[])
 {
-	// create the test suite and test case
+	// create the test suite
 	Suite* suite = suite_create("test suite");
+	
+	// create the Roman to Arabic test case
 	TCase* r_t_a_test_case = tcase_create("convert_roman_to_arabic test cases");
 
 	// add our convert_roman_to_arabic test(s) to the test case
@@ -40,7 +42,7 @@ int main( int argc, char* argv[])
 	tcase_add_test(v_test_case, test_validate_roman_numeral_bad_ten);
 	
 	// add the test suite we want
-	suite_add_tcase(suite, v_test_case);
+	suite_add_tcase(suite, r_t_a_test_case);
 
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
