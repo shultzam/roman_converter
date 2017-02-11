@@ -374,4 +374,10 @@ START_TEST(add_two_roman_1_1)
 }
 END_TEST
 
+START_TEST(add_two_roman_1_2)
+{
+	ck_assert_str_eq(add_two_roman_values("I", "II"), "III");
+}
+END_TEST
+
 #endif	// __TESTS_H__

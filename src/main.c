@@ -107,6 +107,7 @@ int main( int argc, char* argv[])
 	
 	// add our add_two_roman_values test(s) to the test case
 	tcase_add_test(add_test_case, add_two_roman_1_1);
+	tcase_add_test(add_test_case, add_two_roman_1_2);
 	
 	// add the test suite(s) we want
 #if 0

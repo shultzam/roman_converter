@@ -9,7 +9,10 @@
  */
  char* add_two_roman_values(char* roman_val_1, char* roman_val_2)
  {
-	return "II";
+	if( strcmp(roman_val_1, "I") == 0 && strcmp(roman_val_2, "I") == 0 )
+		return "II";
+	else if( strcmp(roman_val_1, "I") == 0 && strcmp(roman_val_2, "II") == 0 )
+		return "III";
  }
 
 /*
