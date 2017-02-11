@@ -1,0 +1,30 @@
+Allen Shultz
+OS      : Ubuntu 14.4
+Language: C
+Compiler: GNU GCC with Make
+VC	: Github @ https://github.com/shultzam/roman_converter
+Testing : Check unit testing framwork
+
+To compile:
+	make clean && make test_converter
+	- test_converter is only a driver of the various test suites
+
+To execute:
+	./test_converter <ARGUMENTS>
+	
+	ARGUMENT OPTIONS:	
+		ROMAN_TO_ARABIC		tests Roman to Arabic conversions
+		VALID_ROMAN		tests validation of Roman numerals
+		ROMAN_VALUE		tests converting Roman characters to value
+		ARABIC_TO_ROMAN		tests Arabic to Roman conversions
+		DOUBLE_CONVERSIONS	tests converting Arabic->Roman->Arabic
+		ADDITIONS		tests additions of two Roman numerals
+		SUBTRACTIONS		tests subtraction of two Roman numerals
+
+NOTE: This system does not currently handle negative numbers
+				
+				
+				
+				
+				
+				
