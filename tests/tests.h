@@ -27,4 +27,28 @@ START_TEST(test_convert_roman_ten_to_arrabic)
 }
 END_TEST
 
+START_TEST(test_convert_roman_fifty_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("L"), 50);
+}
+END_TEST
+
+START_TEST(test_convert_roman_hundred_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("C"), 100);
+}
+END_TEST
+
+START_TEST(test_convert_roman_fivehundred_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("D"), 500);
+}
+END_TEST
+
+START_TEST(test_convert_roman_thousand_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("M"), 1000);
+}
+END_TEST
+
 #endif	// __TESTS_H__
