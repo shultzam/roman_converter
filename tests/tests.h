@@ -82,6 +82,18 @@ START_TEST(test_convert_roman_three_to_arabic)
 }
 END_TEST
 
+START_TEST(test_convert_roman_1744_to_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("MDCCXLIV"), 1744);
+}
+END_TEST
+
+START_TEST(test_convert_roman_3723_to_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("MMMDCCXXIII"), 3723);
+}
+END_TEST
+
 // VALIDATE TEST CASES
 START_TEST(test_validate_roman_numeral_one)
 {

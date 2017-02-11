@@ -170,11 +170,26 @@ int32_t convert_roman_to_arabic( char* roman_input )
 	
 	int32_t sum = 0;		// value to return
 	int32_t char_index; 
-	uint16_t char_value;
+	char previous  = ' ';
+	// check characters right from left
 	for( char_index = strlen(roman_input) - 1; char_index >= 0; char_index-- )
 	{
-		char_value = convert_roman_to_value(roman_input[char_index]);
-		sum += char_value;
+		// if the values are getting smaller, right to left and not a duplicate
+		// character
+		if( convert_roman_to_value(roman_input[char_index]) < sum
+		 && roman_input[char_index] != previous )
+		{
+			sum -= convert_roman_to_value(roman_input[char_index]);
+		}
+		else
+		{
+			// otherwise just increment the value
+			sum += convert_roman_to_value(roman_input[char_index]);
+		}
+		
+		// update previous character -- this is here instead of just looking at the next char
+		// so that we can compare on the first indicie without segfaulting
+		previous = roman_input[char_index];
 	}
 	
 	// return the saved value

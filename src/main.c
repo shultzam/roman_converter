@@ -32,7 +32,9 @@ int main( int argc, char* argv[])
 	tcase_add_test(r_t_a_test_case, test_convert_roman_fifty_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_hundred_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_fivehundred_to_arabic);
-	tcase_add_test(r_t_a_test_case, test_convert_roman_thousand_to_arabic);	
+	tcase_add_test(r_t_a_test_case, test_convert_roman_thousand_to_arabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_1744_to_arabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_3723_to_arabic);
 	
 	// create the validate test case
 	TCase* v_test_case = tcase_create("valid_roman_numeral test cases");
