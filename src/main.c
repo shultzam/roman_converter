@@ -66,14 +66,36 @@ int main( int argc, char* argv[])
 	TCase* a_t_r_test_case = tcase_create("arabic to Roman test cases");
 	
 	// add our valid_roman_numeral test(s) to the test case
-	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_1);
+#if 1
+	
+	
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_5);
+	
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_10);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_20);
+	
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_45);
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_50);
+	
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_100);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_200);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_250);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_275);
+	
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_500);
+	
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_1000);
-	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_42);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_2000);
+#endif
+	
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_1);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_4);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_9);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_40);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_90);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_400);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_490);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_900);
 	
 	// add the test suite we want
 	suite_add_tcase(suite, a_t_r_test_case);

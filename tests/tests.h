@@ -199,9 +199,21 @@ START_TEST(test_value_to_roman_char_1)
 }
 END_TEST
 
+START_TEST(test_value_to_roman_char_4)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(4), "IV");
+}
+END_TEST
+
 START_TEST(test_value_to_roman_char_5)
 {
 	ck_assert_str_eq(convert_arabic_to_roman(5), "V");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_9)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(9), "IX");
 }
 END_TEST
 
@@ -211,9 +223,33 @@ START_TEST(test_value_to_roman_char_10)
 }
 END_TEST
 
+START_TEST(test_value_to_roman_char_20)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(20), "XX");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_40)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(40), "XL");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_45)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(45), "XLV");
+}
+END_TEST
+
 START_TEST(test_value_to_roman_char_50)
 {
 	ck_assert_str_eq(convert_arabic_to_roman(50), "L");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_90)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(90), "XC");
 }
 END_TEST
 
@@ -223,9 +259,45 @@ START_TEST(test_value_to_roman_char_100)
 }
 END_TEST
 
+START_TEST(test_value_to_roman_char_200)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(200), "CC");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_250)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(250), "CCL");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_275)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(275), "CCLXXV");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_400)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(400), "CD");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_490)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(490), "CDXC");
+}
+END_TEST
+
 START_TEST(test_value_to_roman_char_500)
 {
 	ck_assert_str_eq(convert_arabic_to_roman(500), "D");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_900)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(900), "CM");
 }
 END_TEST
 
@@ -235,9 +307,9 @@ START_TEST(test_value_to_roman_char_1000)
 }
 END_TEST
 
-START_TEST(test_value_to_roman_char_42)
+START_TEST(test_value_to_roman_char_2000)
 {
-	ck_assert_str_eq(convert_arabic_to_roman(42), "0");
+	ck_assert_str_eq(convert_arabic_to_roman(2000), "MM");
 }
 END_TEST
 

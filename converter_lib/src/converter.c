@@ -199,43 +199,132 @@ int32_t convert_roman_to_arabic( char* roman_input )
 
 char* convert_arabic_to_roman( int32_t arabic_input )
 {
-	char roman_string[50];
-	if( arabic_input == 1000 )			// value of M
+	char roman_string[50];		// string to keep track of what is added
+	uint32_t s_index = 0;		// tracks the string index
+	uint32_t index;				// for looping through the arabic_input
+	
+	uint8_t flag = 0;
+	while( arabic_input != 0 )
 	{
-		roman_string[0] = 'M';
-	}
-	else if( arabic_input == 500 )		// value of D
-	{
-		roman_string[0] = 'D';
-	}
-	else if( arabic_input == 100 )		// value of C
-	{
-		roman_string[0] = 'C';
-	}
-	else if( arabic_input == 50 )		// value of L
-	{
-		roman_string[0] = 'L';
-	}
-	else if( arabic_input == 10 )		// value of X
-	{
-		roman_string[0] = 'X';
-	}
-	else if( arabic_input == 5 )		// value of V
-	{
-		roman_string[0] = 'V';
-	}
-	else if( arabic_input == 1 )		// value of I
-	{
-		roman_string[0] = 'I';
-	}
-	else
-	{
-		printf("*** WARNING: Invalid number (%u) found in %s\n", arabic_input, __func__ );
-		return "0";
+		if( arabic_input >= 1000 )			// value of M
+		{
+			for( index = 0; index < arabic_input/1000; index++ )
+			{
+				roman_string[s_index++] = 'M';
+			}
+			arabic_input = arabic_input - (arabic_input/1000) * 1000; 
+		}
+		else if( arabic_input >= 500 )		// value of D
+		{
+			if( arabic_input < 900 )
+			{
+				for( index = 0; index < arabic_input/500; index++ )
+				{
+					roman_string[s_index++] = 'D';
+				}
+				arabic_input = arabic_input - (arabic_input/500) * 500; 
+			}
+			else
+			{
+				roman_string[s_index++] = 'C';
+				roman_string[s_index++] = 'M';
+				arabic_input = arabic_input - 900;
+			}
+		}
+		else if( arabic_input >= 100 )		// value of C
+		{
+			if( arabic_input < 400 )
+			{
+				for( index = 0; index < arabic_input/100; index++ )
+				{
+					roman_string[s_index++] = 'C';
+				}
+				arabic_input = arabic_input - (arabic_input/100) * 100; 
+			}
+			else
+			{				
+				roman_string[s_index++] = 'C';
+				roman_string[s_index++] = 'D';
+				arabic_input = arabic_input - 400;
+			}
+		}
+		else if( arabic_input >= 50 )		// value of L
+		{
+			if( arabic_input < 90 )
+			{
+				if( arabic_input == 90 )
+					printf("== arabic_input = %u\n", arabic_input);
+				
+				for( index = 0; index < arabic_input/50; index++ )
+				{
+					roman_string[s_index++] = 'L';
+				}
+				arabic_input = arabic_input - (arabic_input/50) * 50; 
+			}
+			else
+			{
+				roman_string[s_index++] = 'X';
+				roman_string[s_index++] = 'C';
+				arabic_input = arabic_input - 90;
+			}
+		}
+		else if( arabic_input >= 10 )		// value of X
+		{
+			if( arabic_input < 40 )
+			{
+				for( index = 0; index < arabic_input/10; index++ )
+				{
+					roman_string[s_index++] = 'X';
+				}
+				arabic_input = arabic_input - (arabic_input/10) * 10; 
+			}
+			else
+			{
+				roman_string[s_index++] = 'X';
+				roman_string[s_index++] = 'L';
+				arabic_input = arabic_input - 40;
+			}
+		}
+		else if( arabic_input >= 5 )		// value of V
+		{
+			if( arabic_input < 9 )
+			{
+				for( index = 0; index < arabic_input/5; index++ )
+				{
+					roman_string[s_index++] = 'V';
+				}
+				arabic_input = arabic_input - (arabic_input/5) * 5; 
+			}
+			else
+			{
+				roman_string[s_index++] = 'I';
+				roman_string[s_index++] = 'X';
+				arabic_input = arabic_input - 9;
+			}
+		}
+		else if( arabic_input >= 1 )		// value of I
+		{
+			if( arabic_input < 4 )
+			{
+				for( index = 0; index < arabic_input; index++ )
+				{
+					roman_string[s_index++] = 'I';
+				}
+				arabic_input = arabic_input - arabic_input; 
+			}
+			else
+			{
+				roman_string[s_index++] = 'I';
+				roman_string[s_index++] = 'V';
+				arabic_input = arabic_input - 4;
+			}
+		}
 	}
 	
+	// recreate the return string as a char*
+	char* return_string = (char* )malloc(strlen(roman_string) + 1);
+	strcpy(return_string, roman_string);
+	
 	// return our roman_string
-	char* return_string = (char* )malloc(sizeof(char) * 1);
-	return_string[0] = roman_string[0];
 	return return_string;
 }

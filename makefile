@@ -19,8 +19,11 @@ ADD_LIBS= -lcheck -lm -lrt -lpthread
 TOBJ	= main.o
 LOBJ	= converter.o
 
-.PHONY: all clean
+.PHONY: all clean help
 all:
+	@make help
+	
+help:
 	@echo "Target(s):   make test_converter"
 	@echo "             make clean"
 
@@ -28,16 +31,16 @@ $(EXEC): $(OBJDIR)/$(TOBJ) $(LIBDIR)/$(LIB)
 	gcc $^ -o $@ $(ADD_LIBS)
 
 $(OBJDIR)/$(TOBJ): $(SRCDIR)/main.c
-	mkdir -p $(OBJDIR)
-	mkdir -p $(LIBOBJ)
+	@mkdir -p $(OBJDIR)
+	@mkdir -p $(LIBOBJ)
 	gcc $(FLAGS) -c $< -o $@
 
 $(LIBDIR)/$(LIB): $(LIBOBJ)/$(LOBJ)
-	cd $(LIBDIR)
+	@cd $(LIBDIR)
 	ar rcs $@ $^ 
 
 $(LIBOBJ)/$(LOBJ): $(LIBSRC)/converter.c $(LIBINC)/converter.h
-	cd $(LIBDIR)
+	@cd $(LIBDIR)
 	gcc -c -o $@ $< $(LIBFLAG)
 
 clean:
