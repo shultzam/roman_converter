@@ -368,6 +368,7 @@ START_TEST(test_double_convert_420)
 }
 END_TEST
 
+// ADDING TESTS
 START_TEST(add_two_roman_1_1)
 {
 	ck_assert_str_eq(add_two_roman_values("I", "I"), "II");
@@ -383,6 +384,36 @@ END_TEST
 START_TEST(add_two_roman_2_1)
 {
 	ck_assert_str_eq(add_two_roman_values("II", "I"), "III");
+}
+END_TEST
+
+START_TEST(add_two_roman_3_3)
+{
+	ck_assert_str_eq(add_two_roman_values("III", "III"), "VI");
+}
+END_TEST
+
+START_TEST(add_two_roman_7_4)
+{
+	ck_assert_str_eq(add_two_roman_values("VII", "IV"), "XI");
+}
+END_TEST
+
+START_TEST(add_two_roman_51_22)
+{
+	ck_assert_str_eq(add_two_roman_values("LI", "XXII"), "LXXIII");
+}
+END_TEST
+
+START_TEST(add_two_roman_900_50)
+{
+	ck_assert_str_eq(add_two_roman_values("CM", "L"), "CML");
+}
+END_TEST
+
+START_TEST(add_two_roman_42_99)
+{
+	ck_assert_str_eq(add_two_roman_values("XLII", "XCIX"), "CXLI");
 }
 END_TEST
 
