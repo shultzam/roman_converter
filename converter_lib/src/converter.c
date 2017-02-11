@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "converter.h"
 
@@ -194,4 +195,47 @@ int32_t convert_roman_to_arabic( char* roman_input )
 	
 	// return the saved value
 	return sum;
+}
+
+char* convert_arabic_to_roman( int32_t arabic_input )
+{
+	char roman_string[50];
+	if( arabic_input == 1000 )			// value of M
+	{
+		roman_string[0] = 'M';
+	}
+	else if( arabic_input == 500 )		// value of D
+	{
+		roman_string[0] = 'D';
+	}
+	else if( arabic_input == 100 )		// value of C
+	{
+		roman_string[0] = 'C';
+	}
+	else if( arabic_input == 50 )		// value of L
+	{
+		roman_string[0] = 'L';
+	}
+	else if( arabic_input == 10 )		// value of X
+	{
+		roman_string[0] = 'X';
+	}
+	else if( arabic_input == 5 )		// value of V
+	{
+		roman_string[0] = 'V';
+	}
+	else if( arabic_input == 1 )		// value of I
+	{
+		roman_string[0] = 'I';
+	}
+	else
+	{
+		printf("*** WARNING: Invalid number (%u) found in %s\n", arabic_input, __func__ );
+		return "0";
+	}
+	
+	// return our roman_string
+	char* return_string = (char* )malloc(sizeof(char) * 1);
+	return_string[0] = roman_string[0];
+	return return_string;
 }

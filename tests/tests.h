@@ -155,7 +155,7 @@ START_TEST(test_validate_roman_numeral_XC)
 }
 END_TEST
 
-// character to value tests
+// CHARACTER TO VALUE TESTS
 START_TEST(test_roman_char_to_value_I)
 {
 	ck_assert_int_eq(convert_roman_to_value('I'), 1);
@@ -189,6 +189,55 @@ END_TEST
 START_TEST(test_roman_char_to_value_F)
 {
 	ck_assert_int_eq(convert_roman_to_value('F'), 0);
+}
+END_TEST
+
+// ARABIC TO ROMAN TESTS
+START_TEST(test_value_to_roman_char_1)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(1), "I");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_5)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(5), "V");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_10)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(10), "X");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_50)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(50), "L");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_100)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(100), "C");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_500)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(500), "D");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_1000)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(1000), "M");
+}
+END_TEST
+
+START_TEST(test_value_to_roman_char_42)
+{
+	ck_assert_str_eq(convert_arabic_to_roman(42), "0");
 }
 END_TEST
 

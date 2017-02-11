@@ -51,7 +51,7 @@ int main( int argc, char* argv[])
 	tcase_add_test(v_test_case, test_validate_roman_numeral_CM);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_XC);
 	
-	// create the validate test case
+	// create the validate test caseS
 	TCase* value_test_case = tcase_create("value of char test cases");
 	
 	// add our value of Roman numerals test(s) to the test case
@@ -62,8 +62,21 @@ int main( int argc, char* argv[])
 	tcase_add_test(value_test_case, test_roman_char_to_value_M);
 	tcase_add_test(value_test_case, test_roman_char_to_value_F);
 	
+	// create the Arabic to Roman test cases
+	TCase* a_t_r_test_case = tcase_create("arabic to Roman test cases");
+	
+	// add our valid_roman_numeral test(s) to the test case
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_1);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_5);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_10);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_50);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_100);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_500);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_1000);
+	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_42);
+	
 	// add the test suite we want
-	suite_add_tcase(suite, r_t_a_test_case);
+	suite_add_tcase(suite, a_t_r_test_case);
 
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
