@@ -47,8 +47,7 @@ int8_t valid_roman_numeral( char* roman_input )
 		// check for 3 consecutive characters of V, L or D
 		if( roman_input[char_index] == 'V' )
 		{
-			if( roman_input[char_index + 1] == 'V' 
-			 && roman_input[char_index + 2] == 'V' )
+			if( roman_input[char_index + 1] == 'V' && roman_input[char_index + 2] == 'V' )
 			{	
 				printf("*** ERROR: Invalid Roman numeral detected due to 3 consecutive 'V'\n"); 
 				printf("           Roman numeral received: %s\n", roman_input);
@@ -57,8 +56,7 @@ int8_t valid_roman_numeral( char* roman_input )
 		}
 		else if( roman_input[char_index] == 'L' )
 		{
-			if( roman_input[char_index + 1] == 'L' 
-			 && roman_input[char_index + 2] == 'L' )
+			if( roman_input[char_index + 1] == 'L' && roman_input[char_index + 2] == 'L' )
 			{	
 				printf("*** ERROR: Invalid Roman numeral detected due to 3 consecutive 'L'\n"); 
 				printf("           Roman numeral received: %s\n", roman_input);
@@ -67,10 +65,64 @@ int8_t valid_roman_numeral( char* roman_input )
 		}
 		else if( roman_input[char_index] == 'D' )
 		{
-			if( roman_input[char_index + 1] == 'D' 
-			 && roman_input[char_index + 2] == 'D' )
+			if( roman_input[char_index + 1] == 'D' && roman_input[char_index + 2] == 'D' )
 			{	
 				printf("*** ERROR: Invalid Roman numeral detected due to 3 consecutive 'D'\n"); 
+				printf("           Roman numeral received: %s\n", roman_input);
+				return 0;
+			}
+		}
+		
+		// check for illegal preceding characters
+		if( roman_input[char_index] == 'I' )
+		{
+			if( roman_input[char_index + 1] == 'L' || roman_input[char_index + 1] == 'C' 
+			 || roman_input[char_index + 1] == 'D' || roman_input[char_index + 1] == 'M' )
+			{
+				printf("*** ERROR: Invalid Roman numeral detected due illegal proceding characters\n"); 
+				printf("           Roman numeral received: %s\n", roman_input);
+				return 0;
+			}
+		}
+		
+		else if( roman_input[char_index] == 'V' )
+		{
+			if( roman_input[char_index + 1] == 'L' || roman_input[char_index + 1] == 'C' 
+			 || roman_input[char_index + 1] == 'D' || roman_input[char_index + 1] == 'M' )
+			{
+				printf("*** ERROR: Invalid Roman numeral detected due illegal proceding characters\n"); 
+				printf("           Roman numeral received: %s\n", roman_input);
+				return 0;
+			}
+		}
+		
+		else if( roman_input[char_index] == 'V' )
+		{
+			if( roman_input[char_index + 1] == 'C' 
+			 || roman_input[char_index + 1] == 'D' 
+			 || roman_input[char_index + 1] == 'M' )
+			{
+				printf("*** ERROR: Invalid Roman numeral detected due illegal proceding characters\n"); 
+				printf("           Roman numeral received: %s\n", roman_input);
+				return 0;
+			}
+		}
+		
+		else if( roman_input[char_index] == 'X' )
+		{
+			if( roman_input[char_index + 1] == 'D' || roman_input[char_index + 1] == 'M' )
+			{
+				printf("*** ERROR: Invalid Roman numeral detected due illegal proceding characters\n"); 
+				printf("           Roman numeral received: %s\n", roman_input);
+				return 0;
+			}
+		}
+		
+		else if( roman_input[char_index] == 'L' )
+		{
+			if( roman_input[char_index + 1] == 'D' || roman_input[char_index + 1] == 'M' )
+			{
+				printf("*** ERROR: Invalid Roman numeral detected due illegal proceding characters\n"); 
 				printf("           Roman numeral received: %s\n", roman_input);
 				return 0;
 			}

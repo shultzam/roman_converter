@@ -89,9 +89,33 @@ START_TEST(test_validate_roman_numeral_five)
 }
 END_TEST
 
-START_TEST(test_validate_roman_numeral_bad_ten)
+START_TEST(test_validate_roman_numeral_nine)
 {
-	ck_assert_int_eq(valid_roman_numeral("VVV"), 0);
+	ck_assert_int_eq(valid_roman_numeral("IX"), 1);
+}
+END_TEST
+
+START_TEST(test_validate_roman_numeral_ID)
+{
+	ck_assert_int_eq(valid_roman_numeral("ID"), 0);
+}
+END_TEST
+
+START_TEST(test_validate_roman_numeral_LM)
+{
+	ck_assert_int_eq(valid_roman_numeral("LM"), 0);
+}
+END_TEST
+
+START_TEST(test_validate_roman_numeral_CM)
+{
+	ck_assert_int_eq(valid_roman_numeral("CM"), 1);
+}
+END_TEST
+
+START_TEST(test_validate_roman_numeral_XC)
+{
+	ck_assert_int_eq(valid_roman_numeral("XC"), 1);
 }
 END_TEST
 

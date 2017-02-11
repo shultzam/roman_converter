@@ -33,16 +33,23 @@ int main( int argc, char* argv[])
 	// create the validate test case
 	TCase* v_test_case = tcase_create("valid_roman_numeral test cases");
 	
-	// add our valid_roman_numeral test(s) to the test case 
+	// add our valid_roman_numeral test(s) to the test case
+#if 0
 	tcase_add_test(v_test_case, test_validate_roman_numeral_one);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_two);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_three);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_bad_four);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_five);
 	tcase_add_test(v_test_case, test_validate_roman_numeral_bad_ten);
+#endif
+	tcase_add_test(v_test_case, test_validate_roman_numeral_nine);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_ID);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_LM);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_CM);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_XC);
 	
 	// add the test suite we want
-	suite_add_tcase(suite, r_t_a_test_case);
+	suite_add_tcase(suite, v_test_case);
 
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
