@@ -14,22 +14,33 @@
 int main( int argc, char* argv[])
 {
 	// create the test suite and test case
-	Suite* suite = suite_create("test suite #1");
-	TCase* test_case = tcase_create("test case #1");
+	Suite* suite = suite_create("test suite");
+	TCase* r_t_a_test_case = tcase_create("convert_roman_to_arabic test cases");
 
-	// add our test(s) to the test case and the test case
-	// to the suite
-	tcase_add_test(test_case, test_convert_roman_one_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_two_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_three_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_five_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_ten_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_fifty_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_hundred_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_fivehundred_to_arrabic);
-	tcase_add_test(test_case, test_convert_roman_thousand_to_arrabic);
+	// add our convert_roman_to_arabic test(s) to the test case
+	tcase_add_test(r_t_a_test_case, test_convert_roman_one_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_two_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_three_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_five_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_ten_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_fifty_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_hundred_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_fivehundred_to_arrabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_thousand_to_arrabic);	
 	
-	suite_add_tcase(suite, test_case);
+	// create the validate test case
+	TCase* v_test_case = tcase_create("valid_roman_numeral test cases");
+	
+	// add our valid_roman_numeral test(s) to the test case 
+	tcase_add_test(v_test_case, test_validate_roman_numeral_one);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_two);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_three);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_bad_four);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_five);
+	tcase_add_test(v_test_case, test_validate_roman_numeral_bad_ten);
+	
+	// add the test suite we want
+	suite_add_tcase(suite, v_test_case);
 
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
