@@ -313,4 +313,53 @@ START_TEST(test_value_to_roman_char_2000)
 }
 END_TEST
 
+// DOUBLE CONVERSION TEST CASES
+START_TEST(test_double_convert_1)
+{
+	ck_assert_int_eq(temp_double_conversion_test(1), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_2)
+{
+	ck_assert_int_eq(temp_double_conversion_test(2), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_4)
+{
+	ck_assert_int_eq(temp_double_conversion_test(4), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_15)
+{
+	ck_assert_int_eq(temp_double_conversion_test(15), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_300)
+{
+	ck_assert_int_eq(temp_double_conversion_test(300), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_180)
+{
+	ck_assert_int_eq(temp_double_conversion_test(180), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_131)
+{
+	ck_assert_int_eq(temp_double_conversion_test(131), 1);
+}
+END_TEST
+
+START_TEST(test_double_convert_420)
+{
+	ck_assert_int_eq(temp_double_conversion_test(420), 1);
+}
+END_TEST
+
 #endif	// __TESTS_H__

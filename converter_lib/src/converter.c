@@ -328,3 +328,21 @@ char* convert_arabic_to_roman( int32_t arabic_input )
 	// return our roman_string
 	return return_string;
 }
+
+// test function to be used for verifying Arabic -> Roman -> Arabic
+uint8_t temp_double_conversion_test( uint32_t arabic_input )
+{
+	char*   roman_output = convert_arabic_to_roman(arabic_input);
+	int32_t arabic_output = convert_roman_to_arabic(roman_output);
+	
+	if( arabic_output != arabic_input )
+	{
+		printf("*** WARNING: Conversion checks in %s failed\n", __func__ );
+		printf("    arabic_input  = %u\n", arabic_input);
+		printf("    roman_output  = %s\n", roman_output);
+		printf("    arabic_output = %u\n", arabic_output);
+		return 0;
+	}
+	
+	return 1;
+}
