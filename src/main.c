@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include <check.h>
 
-#include "converter.h"
 #include "tests.h"
 
 /*
@@ -20,7 +19,8 @@ int main( int argc, char* argv[])
 
 	// add our test(s) to the test case and the test case
 	// to the suite
-	tcase_add_test(test_case, test_convert_roman_to_arrabic);
+	tcase_add_test(test_case, test_convert_roman_one_to_arrabic);
+	tcase_add_test(test_case, test_convert_roman_two_to_arrabic);
 	suite_add_tcase(suite, test_case);
 
 	// set up an SRunner to track the state of our tests
