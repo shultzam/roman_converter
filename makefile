@@ -1,4 +1,5 @@
 SRCDIR	= src
+TESTSDIR= tests
 OBJDIR	= obj
 LIBDIR  = converter_lib
 LIBSRC	= $(LIBDIR)/src
@@ -7,9 +8,10 @@ LIBOBJ	= $(LIBDIR)/obj
 
 EXEC	= test_converter
 LIB 	= roman_converter.a
+LIBFLAG = -I$(LIBDIR)/inc
 
 CFLAGS	= -Wall
-INCLUDE	= -Iinc
+INCLUDE	= -I$(TESTSDIR) -I$(LIBINC)
 DEFINES	= -DLINUX
 FLAGS	= $(CFLAGS) $(DEFINES) $(INCLUDE)
 ADD_LIBS= -lcheck -lm -lrt -lpthread
@@ -32,11 +34,11 @@ $(OBJDIR)/$(TOBJ): $(SRCDIR)/main.c
 
 $(LIBDIR)/$(LIB): $(LIBOBJ)/$(LOBJ)
 	cd $(LIBDIR)
-	ar rcs $@ $^
+	ar rcs $@ $^ 
 
 $(LIBOBJ)/$(LOBJ): $(LIBSRC)/converter.c $(LIBINC)/converter.h
 	cd $(LIBDIR)
-	gcc -c -o $@ $<
+	gcc -c -o $@ $< $(LIBFLAG)
 
 clean:
 	@echo "removing old library, old executable and obj directory.."
