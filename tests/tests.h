@@ -119,4 +119,41 @@ START_TEST(test_validate_roman_numeral_XC)
 }
 END_TEST
 
+// character to value tests
+START_TEST(test_roman_char_to_value_I)
+{
+	ck_assert_int_eq(convert_roman_to_value('I'), 1);
+}
+END_TEST
+
+START_TEST(test_roman_char_to_value_L)
+{
+	ck_assert_int_eq(convert_roman_to_value('L'), 50);
+}
+END_TEST
+
+START_TEST(test_roman_char_to_value_C)
+{
+	ck_assert_int_eq(convert_roman_to_value('C'), 100);
+}
+END_TEST
+
+START_TEST(test_roman_char_to_value_D)
+{
+	ck_assert_int_eq(convert_roman_to_value('D'), 500);
+}
+END_TEST
+
+START_TEST(test_roman_char_to_value_M)
+{
+	ck_assert_int_eq(convert_roman_to_value('M'), 5000);
+}
+END_TEST
+
+START_TEST(test_roman_char_to_value_F)
+{
+	ck_assert_int_eq(convert_roman_to_value('F'), 0);
+}
+END_TEST
+
 #endif	// __TESTS_H__

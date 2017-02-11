@@ -133,6 +133,31 @@ int8_t valid_roman_numeral( char* roman_input )
 	return 1;
 }
 
+// convert Roman numeral character to Arabic value
+uint16_t convert_roman_to_value( char roman_char )
+{
+	switch( roman_char )
+	{
+		case 'I':
+			return 1;
+		case 'V':
+			return 5;
+		case 'X':
+			return 10;
+		case 'L':
+			return 50;
+		case 'C':
+			return 100;
+		case 'D':
+			return 500;
+		case 'M':
+			return 5000;
+		default:
+			printf("*** WARNING: Invalid character (%c) in %s\n", roman_char, __func__);
+			return 0;
+	}
+}
+
 // converts a given string of roman numerals into an integer
 int32_t convert_roman_to_arabic( char* roman_input )
 {
