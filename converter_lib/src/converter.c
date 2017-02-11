@@ -9,14 +9,14 @@
  */
  char* add_two_roman_values(char* roman_val_1, char* roman_val_2)
  {
-	if( strcmp(roman_val_1, "I") == 0 && strcmp(roman_val_2, "I") == 0 )
-		return "II";
-	else if( strcmp(roman_val_1, "I") == 0 && strcmp(roman_val_2, "II") == 0 )
-		return "III";
-	else if( strcmp(roman_val_1, "II") == 0 && strcmp(roman_val_2, "I") == 0 )
-		return "III";
+	// convert our values to Arabic before summing
+	int32_t value1 = convert_roman_to_arabic(roman_val_1);
+	int32_t value2 = convert_roman_to_arabic(roman_val_2);
+	int32_t sum	   = value1 + value2;
 	
-	return "0";
+	// convert back to Roman
+	char* result = convert_arabic_to_roman(sum);
+	return result;
  }
 
 /*
@@ -216,6 +216,7 @@ int32_t convert_roman_to_arabic( char* roman_input )
 	return sum;
 }
 
+// converts a given integer into the appropriate Roman notation
 char* convert_arabic_to_roman( int32_t arabic_input )
 {
 	char roman_string[50];		// string to keep track of what is added
