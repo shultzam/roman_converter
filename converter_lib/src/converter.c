@@ -162,7 +162,7 @@ uint16_t convert_roman_to_value( char roman_char )
 int32_t convert_roman_to_arabic( char* roman_input )
 {
 	// validate the input string
-	if( !valid_roman_numeral(roman_input) )
+	if( !valid_roman_numeral(roman_input) ) 
 	{
 		printf("*** WARNING: Invalid input in %s: %s\n", __func__, roman_input);
 		return 0;
