@@ -23,6 +23,7 @@ int main( int argc, char* argv[])
 	tcase_add_test(r_t_a_test_case, test_convert_roman_one_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_two_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_three_to_arabic);
+	tcase_add_test(r_t_a_test_case, test_convert_roman_four_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_five_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_ten_to_arabic);
 	tcase_add_test(r_t_a_test_case, test_convert_roman_twelve_to_arabic);
@@ -100,8 +101,12 @@ int main( int argc, char* argv[])
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_180);
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_131);
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_420);
-	
+
 	// add the test suite we want
+	suite_add_tcase(suite, r_t_a_test_case);
+	suite_add_tcase(suite, v_test_case);
+	suite_add_tcase(suite, value_test_case);
+	suite_add_tcase(suite, a_t_r_test_case);
 	suite_add_tcase(suite, dbl_conversion_test_case);
 
 	// set up an SRunner to track the state of our tests

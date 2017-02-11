@@ -16,6 +16,12 @@ START_TEST(test_convert_roman_two_to_arabic)
 }
 END_TEST
 
+START_TEST(test_convert_roman_four_to_arabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("IV"), 4);
+}
+END_TEST
+
 START_TEST(test_convert_roman_five_to_arabic)
 {
 	ck_assert_int_eq(convert_roman_to_arabic("V"), 5);
@@ -182,7 +188,7 @@ END_TEST
 
 START_TEST(test_roman_char_to_value_M)
 {
-	ck_assert_int_eq(convert_roman_to_value('M'), 5000);
+	ck_assert_int_eq(convert_roman_to_value('M'), 1000);
 }
 END_TEST
 
