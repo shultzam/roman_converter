@@ -21,6 +21,7 @@ int main( int argc, char* argv[])
 	// to the suite
 	tcase_add_test(test_case, test_convert_roman_one_to_arrabic);
 	tcase_add_test(test_case, test_convert_roman_two_to_arrabic);
+	tcase_add_test(test_case, test_convert_roman_five_to_arrabic);
 	suite_add_tcase(suite, test_case);
 
 	// set up an SRunner to track the state of our tests

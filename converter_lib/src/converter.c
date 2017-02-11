@@ -12,6 +12,10 @@ int32_t convert_roman_to_arabic( char* roman_input )
 	{
 		return 2;
 	}
+	else if( 0 == strcmp(roman_input, "V"))
+	{
+		return 5;
+	}
 	else
 	{
 		printf("*** WARNING: Unknown input: %s\n", roman_input);

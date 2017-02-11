@@ -15,4 +15,10 @@ START_TEST(test_convert_roman_two_to_arrabic)
 }
 END_TEST
 
+START_TEST(test_convert_roman_five_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("V"), 5);
+}
+END_TEST
+
 #endif	// __TESTS_H__
