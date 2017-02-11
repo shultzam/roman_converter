@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+
 #include "converter.h"
 
+// converts a given string of roman numerals into an integer
 int32_t convert_roman_to_arabic( char* roman_input )
 {
 	if( 0 == strcmp(roman_input, "I") )
@@ -15,6 +17,10 @@ int32_t convert_roman_to_arabic( char* roman_input )
 	else if( 0 == strcmp(roman_input, "V"))
 	{
 		return 5;
+	}
+	else if( 0 == strcmp(roman_input, "X"))
+	{
+		return 10;
 	}
 	else
 	{
