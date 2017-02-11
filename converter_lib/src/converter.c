@@ -13,6 +13,10 @@
 		return "II";
 	else if( strcmp(roman_val_1, "I") == 0 && strcmp(roman_val_2, "II") == 0 )
 		return "III";
+	else if( strcmp(roman_val_1, "II") == 0 && strcmp(roman_val_2, "I") == 0 )
+		return "III";
+	
+	return "0";
  }
 
 /*
