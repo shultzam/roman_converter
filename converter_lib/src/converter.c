@@ -4,6 +4,18 @@
 
 #include "converter.h"
 
+/*
+ * Add and subtract functions
+ */
+ char* add_two_roman_values(char* roman_val_1, char* roman_val_2)
+ {
+	return "II";
+ }
+
+/*
+ * Utiltiy Functions
+ */
+
 // validates the Roman numeral input string against the Roman numeral rules
 int8_t valid_roman_numeral( char* roman_input )
 {

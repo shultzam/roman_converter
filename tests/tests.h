@@ -368,4 +368,10 @@ START_TEST(test_double_convert_420)
 }
 END_TEST
 
+START_TEST(add_two_roman_1_1)
+{
+	ck_assert_str_eq(add_two_roman_values("I", "I"), "II");
+}
+END_TEST
+
 #endif	// __TESTS_H__

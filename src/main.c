@@ -90,9 +90,9 @@ int main( int argc, char* argv[])
 	tcase_add_test(a_t_r_test_case, test_value_to_roman_char_2000);
 	
 	// create the Arabic to Roman test cases
-	TCase* dbl_conversion_test_case = tcase_create("Arabic to Romant to Arabic test cases");
+	TCase* dbl_conversion_test_case = tcase_create("Arabic to Roman to Arabic test cases");
 	
-	// add our valid_roman_numeral test(s) to the test case
+	// add our double_conversion test(s) to the test case
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_1);
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_2);
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_4);
@@ -102,12 +102,21 @@ int main( int argc, char* argv[])
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_131);
 	tcase_add_test(dbl_conversion_test_case, test_double_convert_420);
 
-	// add the test suite we want
+	// create the Arabic to Roman test cases
+	TCase* add_test_case = tcase_create("adding Roman test cases");
+	
+	// add our add_two_roman_values test(s) to the test case
+	tcase_add_test(add_test_case, add_two_roman_1_1);
+	
+	// add the test suite(s) we want
+#if 0
 	suite_add_tcase(suite, r_t_a_test_case);
 	suite_add_tcase(suite, v_test_case);
 	suite_add_tcase(suite, value_test_case);
 	suite_add_tcase(suite, a_t_r_test_case);
 	suite_add_tcase(suite, dbl_conversion_test_case);
+#endif
+	suite_add_tcase(suite, add_test_case);
 
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
