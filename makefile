@@ -25,12 +25,12 @@ all:
 	@echo "             make clean"
 
 $(EXEC): $(OBJDIR)/$(TOBJ) $(LIBDIR)/$(LIB)
-	gcc $^ -o $@ 
+	gcc $^ -o $@ $(ADD_LIBS)
 
 $(OBJDIR)/$(TOBJ): $(SRCDIR)/main.c
 	mkdir -p $(OBJDIR)
 	mkdir -p $(LIBOBJ)
-	gcc $(FLAGS) -c $< -o $@ $(ADD_LIBS)
+	gcc $(FLAGS) -c $< -o $@
 
 $(LIBDIR)/$(LIB): $(LIBOBJ)/$(LOBJ)
 	cd $(LIBDIR)

@@ -2,5 +2,5 @@
 
 int32_t convert_roman_to_arabic( char* roman_input )
 {
-	return 1;
+	return 0;
 }
