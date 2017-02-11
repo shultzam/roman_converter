@@ -51,4 +51,10 @@ START_TEST(test_convert_roman_thousand_to_arrabic)
 }
 END_TEST
 
+START_TEST(test_convert_roman_three_to_arrabic)
+{
+	ck_assert_int_eq(convert_roman_to_arabic("III"), 3);
+}
+END_TEST
+
 #endif	// __TESTS_H__
