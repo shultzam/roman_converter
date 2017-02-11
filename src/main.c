@@ -115,6 +115,12 @@ int main( int argc, char* argv[])
 	tcase_add_test(add_test_case, add_two_roman_900_50);
 	tcase_add_test(add_test_case, add_two_roman_42_99);
 	
+	// create the Arabic to Roman test cases
+	TCase* sub_test_case = tcase_create("subtracting Roman test cases");
+	
+	// add our sub_two_roman_values test(s) to the test case
+	tcase_add_test(sub_test_case, sub_two_roman_2_1);
+	
 	// add the test suite(s) we want
 #if 0
 	suite_add_tcase(suite, r_t_a_test_case);
@@ -122,9 +128,10 @@ int main( int argc, char* argv[])
 	suite_add_tcase(suite, value_test_case);
 	suite_add_tcase(suite, a_t_r_test_case);
 	suite_add_tcase(suite, dbl_conversion_test_case);
-#endif
 	suite_add_tcase(suite, add_test_case);
-
+#endif
+	suite_add_tcase(suite, sub_test_case);
+	
 	// set up an SRunner to track the state of our tests
 	SRunner* state_runner = srunner_create(suite);
 	

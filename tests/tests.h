@@ -417,4 +417,11 @@ START_TEST(add_two_roman_42_99)
 }
 END_TEST
 
+// SUB TESTS
+START_TEST(sub_two_roman_2_1)
+{
+	ck_assert_str_eq(subtract_two_roman_values("II", "I"), "I");
+}
+END_TEST
+
 #endif	// __TESTS_H__

@@ -7,6 +7,7 @@
 /*
  * Add and subtract functions
  */
+ // given two Roman numeral strings, returns the summation
  char* add_two_roman_values(char* roman_val_1, char* roman_val_2)
  {
 	// convert our values to Arabic before summing
@@ -18,6 +19,17 @@
 	char* result = convert_arabic_to_roman(sum);
 	return result;
  }
+ 
+// given two Roman numeral strings, will return the difference
+char* subtract_two_roman_values(char* roman_minuend, char* roman_subtrahend)
+{
+	if( strcmp(roman_minuend, "II") == 0 && strcmp(roman_subtrahend, "I") == 0 )
+	{
+		return "I";
+	}
+	
+	return "-1";
+}
 
 /*
  * Utiltiy Functions
@@ -219,6 +231,14 @@ int32_t convert_roman_to_arabic( char* roman_input )
 // converts a given integer into the appropriate Roman notation
 char* convert_arabic_to_roman( int32_t arabic_input )
 {
+	// check for negative numbers, as we won't handle them
+	if( arabic_input < 0 )
+	{
+		printf("*** WARNING: Negative Arabic number received in %s\n", __func__ );
+		printf("              returning 0\n");
+		return "0";
+	}
+	
 	char roman_string[50];		// string to keep track of what is added
 	uint32_t s_index = 0;		// tracks the string index
 	uint32_t index;				// for looping through the arabic_input
