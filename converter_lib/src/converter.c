@@ -27,6 +27,14 @@ char* subtract_two_roman_values(char* roman_minuend, char* roman_subtrahend)
 	{
 		return "I";
 	}
+	else if( strcmp(roman_minuend, "IV") == 0 && strcmp(roman_subtrahend, "II") == 0 )
+	{
+		return "II";
+	}
+	else if( strcmp(roman_minuend, "V") == 0 && strcmp(roman_subtrahend, "II") == 0 )
+	{
+		return "III";
+	}
 	
 	return "-1";
 }

@@ -120,6 +120,8 @@ int main( int argc, char* argv[])
 	
 	// add our sub_two_roman_values test(s) to the test case
 	tcase_add_test(sub_test_case, sub_two_roman_2_1);
+	tcase_add_test(sub_test_case, sub_two_roman_4_2);
+	tcase_add_test(sub_test_case, sub_two_roman_5_2);
 	
 	// add the test suite(s) we want
 #if 0
