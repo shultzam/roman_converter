@@ -122,6 +122,10 @@ int main( int argc, char* argv[])
 	tcase_add_test(sub_test_case, sub_two_roman_2_1);
 	tcase_add_test(sub_test_case, sub_two_roman_4_2);
 	tcase_add_test(sub_test_case, sub_two_roman_5_2);
+	tcase_add_test(sub_test_case, sub_two_roman_10_2);
+	tcase_add_test(sub_test_case, sub_two_roman_142_23);
+	tcase_add_test(sub_test_case, sub_two_roman_500_498);
+	tcase_add_test(sub_test_case, sub_two_roman_450_299);
 	
 	// add the test suite(s) we want
 #if 0

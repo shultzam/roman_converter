@@ -23,20 +23,14 @@
 // given two Roman numeral strings, will return the difference
 char* subtract_two_roman_values(char* roman_minuend, char* roman_subtrahend)
 {
-	if( strcmp(roman_minuend, "II") == 0 && strcmp(roman_subtrahend, "I") == 0 )
-	{
-		return "I";
-	}
-	else if( strcmp(roman_minuend, "IV") == 0 && strcmp(roman_subtrahend, "II") == 0 )
-	{
-		return "II";
-	}
-	else if( strcmp(roman_minuend, "V") == 0 && strcmp(roman_subtrahend, "II") == 0 )
-	{
-		return "III";
-	}
+	// convert our values to Arabic before summing
+	int32_t minuend    = convert_roman_to_arabic(roman_minuend);
+	int32_t subtrahend = convert_roman_to_arabic(roman_subtrahend);
+	int32_t difference = minuend - subtrahend;
 	
-	return "-1";
+	// convert back to Roman
+	char* result = convert_arabic_to_roman(difference);
+	return result;
 }
 
 /*

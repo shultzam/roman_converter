@@ -436,4 +436,28 @@ START_TEST(sub_two_roman_5_2)
 }
 END_TEST
 
+START_TEST(sub_two_roman_10_2)
+{
+	ck_assert_str_eq(subtract_two_roman_values("X", "II"), "VIII");
+}
+END_TEST
+
+START_TEST(sub_two_roman_142_23)
+{
+	ck_assert_str_eq(subtract_two_roman_values("CXLII", "XXIII"), "CXIX");
+}
+END_TEST
+
+START_TEST(sub_two_roman_500_498)
+{
+	ck_assert_str_eq(subtract_two_roman_values("D", "CDXCVIII"), "II");
+}
+END_TEST
+
+START_TEST(sub_two_roman_450_299)
+{
+	ck_assert_str_eq(subtract_two_roman_values("CDL", "CCXCIX"), "CLI");
+}
+END_TEST
+
 #endif	// __TESTS_H__
