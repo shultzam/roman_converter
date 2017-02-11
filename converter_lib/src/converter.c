@@ -244,7 +244,7 @@ char* convert_arabic_to_roman( int32_t arabic_input )
 	if( arabic_input < 0 )
 	{
 		printf("*** WARNING: Negative Arabic number received in %s\n", __func__ );
-		printf("              returning 0\n");
+		printf("             returning 0\n");
 		return "0";
 	}
 	
